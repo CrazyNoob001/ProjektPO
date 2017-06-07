@@ -20,3 +20,11 @@ void DataBus::removeSlave(DataBusDevice *device)
 {
     m_slaves.removeAll(device);
 }
+
+void DataBus::callTestOnSlaves()
+{
+    for(DataBusDevice* dev : m_slaves)
+    {
+        dev->test();
+    }
+}

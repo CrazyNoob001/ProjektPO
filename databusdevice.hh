@@ -1,12 +1,15 @@
 #ifndef DATABUSDEVICE_HH
 #define DATABUSDEVICE_HH
 #include <QString>
+#include <QDebug>
 
 class DataBusDevice
 {
 public:
-    DataBusDevice(int address);
+    DataBusDevice(int address = -1);
     virtual void receiveCmd(int, const QString & cmd) = 0;
+    void test(){ qDebug() << "Hej, jestem:" << m_address; }
+
 
     int address() const;
     void setAddress(int address);

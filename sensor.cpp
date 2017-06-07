@@ -1,8 +1,9 @@
 #include "sensor.hh"
-
+#include <QDebug>
 Sensor::Sensor(int address) :
     DataBusDevice(address)
 {
+    qDebug() << "from Sensor:" << address;
 
 }
 

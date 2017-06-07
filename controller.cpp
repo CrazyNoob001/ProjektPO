@@ -1,11 +1,11 @@
 #include "controller.hh"
 
-Controller::Controller()
+Controller::Controller():
+    DataBusDevice()
 {
 
 }
 
 void Controller::receiveCmd(int, const QString &cmd)
 {
-
 }

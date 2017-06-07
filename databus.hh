@@ -10,6 +10,7 @@ public:
     void setMaster(DataBusDevice* device = nullptr);
     void addSlave(DataBusDevice* device);
     void removeSlave(DataBusDevice* device);
+    void callTestOnSlaves();
 
 private:
     DataBusDevice* m_master = nullptr;

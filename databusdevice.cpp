@@ -1,8 +1,9 @@
 #include "databusdevice.hh"
-
-DataBusDevice::DataBusDevice(int address = -1)
+#include <QDebug>
+DataBusDevice::DataBusDevice(int address):
+    m_address(address)
 {
-
+    qDebug() << "from device:" << address;
 }
 
 int DataBusDevice::address() const
