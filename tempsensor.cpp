@@ -1,12 +1,27 @@
 #include "tempsensor.hh"
 #include <QDebug>
 
-TempSensor::TempSensor(int address) :
-    Sensor(address)
+TempSensor::TempSensor()
 {
+    m_file = new QFile(FILE_NAME);
 }
 
-bool TempSensor::readValue()
+double TempSensor::readValue()
 {
-    return false;
+    return 6;
+}
+
+void TempSensor::init()
+{
+    m_file->open(QIODevice::ReadOnly | QIODevice::Text);
+}
+
+bool TempSensor::isOk()
+{
+    return m_file->isOpen();
+}
+
+TempSensor::~TempSensor()
+{
+    delete m_file;
 }

@@ -1,7 +1,6 @@
 #include "controller.hh"
 
-Controller::Controller():
-    DataBusDevice()
+Controller::Controller()
 {
 
 }

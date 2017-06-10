@@ -35,7 +35,10 @@ SOURCES += main.cpp\
     rainsensor.cpp \
     windsensor.cpp \
     pressuresensor.cpp \
-    command.cpp
+    command.cpp \
+    initcommand.cpp \
+    measurecommand.cpp \
+    statuscommand.cpp
 
 HEADERS  += mainwindow.hh \
     databusdevice.hh \
@@ -47,6 +50,9 @@ HEADERS  += mainwindow.hh \
     rainsensor.hh \
     windsensor.hh \
     pressuresensor.hh \
-    command.hh
+    command.hh \
+    initcommand.hh \
+    measurecommand.hh \
+    statuscommand.hh
 
 FORMS    += mainwindow.ui

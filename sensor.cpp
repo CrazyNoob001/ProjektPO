@@ -1,11 +1,10 @@
 #include "sensor.hh"
 #include <QDebug>
-Sensor::Sensor(int address) :
-    DataBusDevice(address)
+Sensor::Sensor()
 {
 }
 
-void Sensor::receiveCmd(int, const QString &cmd)
+Sensor::~Sensor()
 {
 
 }

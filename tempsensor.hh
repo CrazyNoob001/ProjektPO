@@ -1,13 +1,21 @@
 #ifndef TEMPSENSOR_HH
 #define TEMPSENSOR_HH
 #include "sensor.hh"
-#include <QDebug>
+#include <QString>
+#include <QFile>
+
 class TempSensor : public Sensor
 {
 public:
-    TempSensor(int address);
-    bool readValue();
-    virtual void test(){ qDebug() << "Hej, jestem temp:" << address(); }
+    TempSensor();
+    double readValue();
+    void init();
+    bool isOk();
+    ~TempSensor();
+
+private:
+    const QString FILE_NAME = "temp_source_data.txt";
+    QFile* m_file;
 };
 
 #endif // TEMPSENSOR_HH

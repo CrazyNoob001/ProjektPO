@@ -3,12 +3,11 @@
 
 #include "databusdevice.hh"
 
-class Controller : public DataBusDevice
+class Controller
 {
 public:
     Controller();
     void receiveCmd(int, const QString &cmd);
-    void test(){ qDebug() << "Hej, jestem controllerem:" << address(); }
 };
 
 #endif // CONTROLLER_HH

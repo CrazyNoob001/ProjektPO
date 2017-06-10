@@ -1,14 +1,14 @@
 #ifndef SENSOR_HH
 #define SENSOR_HH
 
-#include "databusdevice.hh"
-
-class Sensor : public DataBusDevice
+class Sensor
 {
 public:
-    Sensor(int address = -1);
-    void receiveCmd(int, const QString & cmd);
-    virtual bool readValue() = 0;
+    Sensor();
+    virtual void init() = 0;
+    virtual bool isOk() = 0;
+    virtual double readValue() = 0;
+    virtual ~Sensor();
 };
 
 #endif // SENSOR_HH

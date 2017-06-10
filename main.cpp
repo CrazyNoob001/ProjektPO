@@ -4,25 +4,37 @@
 #include "tempsensor.hh"
 #include "controller.hh"
 #include "humiditysensor.hh"
+#include "initcommand.hh"
+#include "statuscommand.hh"
+#include "measurecommand.hh"
+#include "windsensor.hh"
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     MainWindow w;
-    //w.show();
-    DataBus dataBus;
-    DataBus databus;
+    w.show();
     Controller controller;
-    databus.setMaster(&controller);
     QList<Sensor*> sensors;
-    for(int i = 0 ; i < 5; ++i)
+        sensors.append(new WindSensor());
+        sensors.append(new HumiditySensor());
+
+    for(Sensor* sensor : sensors)
     {
-        sensors.append(new TempSensor(i));
-        databus.addSlave(sensors.last());
-        sensors.append(new HumiditySensor(i+50));
-        databus.addSlave(sensors.last());
+        Command* cmd = new InitCommand(sensor);
+        cmd->execute();
+        delete cmd;
+        cmd = new StatusCommand(sensor);
+        cmd->execute();
+        qDebug() << (dynamic_cast<StatusCommand*>(cmd))->ok();
+        delete cmd;
+        cmd = new MeasureCommand(sensor);
+        cmd->execute();
+        qDebug() << (dynamic_cast<MeasureCommand*>(cmd))->value();
+        delete cmd;
     }
-    databus.callTestOnSlaves();
+
+
     for(Sensor* sensor : sensors)
     {
         sensors.removeAll(sensor);
