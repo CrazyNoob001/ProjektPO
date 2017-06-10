@@ -7,6 +7,7 @@ class TempSensor : public Sensor
 public:
     TempSensor(int address);
     bool readValue();
+    virtual void test(){ qDebug() << "Hej, jestem temp:" << address(); }
 };
 
 #endif // TEMPSENSOR_HH

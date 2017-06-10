@@ -8,7 +8,7 @@ class DataBusDevice
 public:
     DataBusDevice(int address = -1);
     virtual void receiveCmd(int, const QString & cmd) = 0;
-    void test(){ qDebug() << "Hej, jestem:" << m_address; }
+    virtual void test(){ qDebug() << "Hej, jestem:" << m_address; }
 
 
     int address() const;

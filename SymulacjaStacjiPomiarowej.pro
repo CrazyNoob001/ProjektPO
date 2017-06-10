@@ -30,13 +30,23 @@ SOURCES += main.cpp\
     sensor.cpp \
     databus.cpp \
     tempsensor.cpp \
-    controller.cpp
+    controller.cpp \
+    humiditysensor.cpp \
+    rainsensor.cpp \
+    windsensor.cpp \
+    pressuresensor.cpp \
+    command.cpp
 
 HEADERS  += mainwindow.hh \
     databusdevice.hh \
     sensor.hh \
     databus.hh \
     tempsensor.hh \
-    controller.hh
+    controller.hh \
+    humiditysensor.hh \
+    rainsensor.hh \
+    windsensor.hh \
+    pressuresensor.hh \
+    command.hh
 
 FORMS    += mainwindow.ui

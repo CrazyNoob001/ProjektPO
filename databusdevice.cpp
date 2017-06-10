@@ -3,7 +3,6 @@
 DataBusDevice::DataBusDevice(int address):
     m_address(address)
 {
-    qDebug() << "from device:" << address;
 }
 
 int DataBusDevice::address() const
