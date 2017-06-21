@@ -17,7 +17,9 @@ bool RainSensor::isOk()
 
 double RainSensor::readValue()
 {
-    return 5;
+    QString line = m_file->readLine();
+    line.truncate(line.length()-1);
+    return line.toDouble();
 }
 
 RainSensor::~RainSensor()

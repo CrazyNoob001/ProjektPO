@@ -12,6 +12,8 @@ public:
     void init();
     bool isOk();
     ~HumiditySensor();
+    HumiditySensor& operator =(const HumiditySensor&)=delete;
+    HumiditySensor(const HumiditySensor&)=delete;
 
 private:
     const QString FILE_NAME = "humidity_source_data.txt";

@@ -1,5 +1,4 @@
 #include "tempsensor.hh"
-#include <QDebug>
 
 TempSensor::TempSensor()
 {
@@ -8,8 +7,11 @@ TempSensor::TempSensor()
 
 double TempSensor::readValue()
 {
-    return 6;
+    QString line = m_file->readLine();
+    line.truncate(line.length()-1);
+    return line.toDouble();
 }
+
 
 void TempSensor::init()
 {

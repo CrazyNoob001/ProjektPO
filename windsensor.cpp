@@ -1,5 +1,4 @@
 #include "windsensor.hh"
-#include <QDebug>
 
 WindSensor::WindSensor()
 {

@@ -1,4 +1,5 @@
 #include "humiditysensor.hh"
+#include <QDebug>
 
 HumiditySensor::HumiditySensor()
 {
@@ -7,7 +8,9 @@ HumiditySensor::HumiditySensor()
 
 double HumiditySensor::readValue()
 {
-    return 2;
+    QString line = m_file->readLine();
+    line.truncate(line.length()-1);
+    return line.toDouble();
 }
 
 void HumiditySensor::init()
@@ -24,3 +27,4 @@ HumiditySensor::~HumiditySensor()
 {
     delete m_file;
 }
+

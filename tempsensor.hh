@@ -12,6 +12,8 @@ public:
     void init();
     bool isOk();
     ~TempSensor();
+    TempSensor& operator =(const TempSensor&)=delete;
+    TempSensor(const TempSensor&)=delete;
 
 private:
     const QString FILE_NAME = "temp_source_data.txt";

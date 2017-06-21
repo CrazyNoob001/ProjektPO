@@ -7,7 +7,9 @@ PressureSensor::PressureSensor()
 
 double PressureSensor::readValue()
 {
-    return 3;
+    QString line = m_file->readLine();
+    line.truncate(line.length()-1);
+    return line.toDouble();
 }
 
 void PressureSensor::init()

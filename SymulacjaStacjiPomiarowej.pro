@@ -26,9 +26,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    databusdevice.cpp \
     sensor.cpp \
-    databus.cpp \
     tempsensor.cpp \
     controller.cpp \
     humiditysensor.cpp \
@@ -38,12 +36,12 @@ SOURCES += main.cpp\
     command.cpp \
     initcommand.cpp \
     measurecommand.cpp \
-    statuscommand.cpp
+    statuscommand.cpp \
+    getcommand.cpp \
+    commandset.cpp
 
 HEADERS  += mainwindow.hh \
-    databusdevice.hh \
     sensor.hh \
-    databus.hh \
     tempsensor.hh \
     controller.hh \
     humiditysensor.hh \
@@ -53,6 +51,7 @@ HEADERS  += mainwindow.hh \
     command.hh \
     initcommand.hh \
     measurecommand.hh \
-    statuscommand.hh
+    statuscommand.hh \
+    commandset.hh
 
 FORMS    += mainwindow.ui
