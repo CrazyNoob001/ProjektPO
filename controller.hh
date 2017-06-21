@@ -1,9 +1,10 @@
 #ifndef CONTROLLER_HH
 #define CONTROLLER_HH
 
-#include "databusdevice.hh"
+#include <QString>
 #include "commandset.hh"
 #include <QTimer>
+#include <QDebug>
 
 class Controller : public QObject
 {
