@@ -3,21 +3,15 @@
 #include "sensor.hh"
 #include <QString>
 #include <QFile>
+#include "fileinputsensor.hh"
 
-class TempSensor : public Sensor
+class TempSensor : public FileInputSensor
 {
 public:
     TempSensor();
-    double readValue();
-    void init();
-    bool isOk();
-    ~TempSensor();
-    TempSensor& operator =(const TempSensor&)=delete;
-    TempSensor(const TempSensor&)=delete;
 
 private:
-    const QString FILE_NAME = "temp_source_data.txt";
-    QFile* m_file;
+    static const QString FILE_NAME;
 };
 
 #endif // TEMPSENSOR_HH

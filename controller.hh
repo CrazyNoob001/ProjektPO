@@ -18,14 +18,13 @@ public:
     void run();
 
 signals:
-    
+   
     void tempChanged(double);
     void humidityChanged(double);
     void rainChanged(double);
     void windChanged(double);
     void pressureChanged(double);
 
-    
     void tempStateChanged(bool);
     void humidityStateChanged(bool);
     void rainStateChanged(bool);

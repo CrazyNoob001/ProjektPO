@@ -3,21 +3,15 @@
 #include "sensor.hh"
 #include <QString>
 #include <QFile>
+#include "fileinputsensor.hh"
 
-class PressureSensor : public Sensor
+class PressureSensor : public FileInputSensor
 {
 public:
     PressureSensor();
-    double readValue();
-    void init();
-    bool isOk();
-    ~PressureSensor();
-    PressureSensor& operator =(const PressureSensor&)=delete;
-    PressureSensor(const PressureSensor&)=delete;
 
 private:
-    const QString FILE_NAME = "pressure_source_data.txt";
-    QFile* m_file;
+    static const QString FILE_NAME;
 };
 
 #endif // PRESSURESENSOR_HH

@@ -37,8 +37,8 @@ SOURCES += main.cpp\
     initcommand.cpp \
     measurecommand.cpp \
     statuscommand.cpp \
-    getcommand.cpp \
-    commandset.cpp
+    commandset.cpp \
+    fileinputsensor.cpp
 
 HEADERS  += mainwindow.hh \
     sensor.hh \
@@ -52,6 +52,7 @@ HEADERS  += mainwindow.hh \
     initcommand.hh \
     measurecommand.hh \
     statuscommand.hh \
-    commandset.hh
+    commandset.hh \
+    fileinputsensor.hh
 
 FORMS    += mainwindow.ui

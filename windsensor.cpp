@@ -1,28 +1,8 @@
 #include "windsensor.hh"
 
-WindSensor::WindSensor()
+WindSensor::WindSensor() :
+    FileInputSensor(FILE_NAME)
 {
-    m_file = new QFile(FILE_NAME);
 }
 
-void WindSensor::init()
-{
-    m_file->open(QIODevice::ReadOnly | QIODevice::Text);
-}
-
-bool WindSensor::isOk()
-{
-    return m_file->isOpen();
-}
-
-double WindSensor::readValue()
-{
-    QString line = m_file->readLine();
-    line.truncate(line.length()-1);
-    return line.toDouble();
-}
-
-WindSensor::~WindSensor()
-{
-    delete m_file;
-}
+const QString WindSensor::FILE_NAME = "wind_source_data.txt";

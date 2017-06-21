@@ -4,21 +4,15 @@
 #include "sensor.hh"
 #include <QString>
 #include <QFile>
+#include "fileinputsensor.hh"
 
-class WindSensor : public Sensor
+class WindSensor : public FileInputSensor
 {
 public:
     WindSensor();
-    void init();
-    bool isOk();
-    double readValue();
-    ~WindSensor();
-    WindSensor& operator =(const WindSensor&)=delete;
-    WindSensor(const WindSensor&)=delete;
 
 private:
-    const QString FILE_NAME = "wind_source_data.txt";
-    QFile* m_file;
+    static const QString FILE_NAME;
 };
 
 #endif // WINDSENSOR_HH

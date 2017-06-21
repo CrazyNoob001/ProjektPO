@@ -3,21 +3,15 @@
 #include "sensor.hh"
 #include <QString>
 #include <QFile>
+#include "fileinputsensor.hh"
 
-class RainSensor : public Sensor
+class RainSensor : public FileInputSensor
 {
 public:
     RainSensor();
-    void init();
-    bool isOk();
-    double readValue();
-    ~RainSensor();
-    RainSensor& operator =(const RainSensor&)=delete;
-    RainSensor(const RainSensor&)=delete;
 
 private:
-    const QString FILE_NAME = "rain_source_data.txt";
-    QFile* m_file;
+    static const QString FILE_NAME;
 };
 
 #endif // RAINSENSOR_HH

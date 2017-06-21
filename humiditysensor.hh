@@ -3,21 +3,14 @@
 #include "sensor.hh"
 #include <QString>
 #include <QFile>
+#include <fileinputsensor.hh>
 
-class HumiditySensor : public Sensor
+class HumiditySensor : public FileInputSensor
 {
 public:
     HumiditySensor();
-    double readValue();
-    void init();
-    bool isOk();
-    ~HumiditySensor();
-    HumiditySensor& operator =(const HumiditySensor&)=delete;
-    HumiditySensor(const HumiditySensor&)=delete;
-
 private:
-    const QString FILE_NAME = "humidity_source_data.txt";
-    QFile* m_file;
+    static const QString FILE_NAME;
 };
 
 #endif // HUMIDITYSENSOR_HH
