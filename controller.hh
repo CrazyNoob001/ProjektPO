@@ -7,7 +7,7 @@
 
 class Controller : public QObject
 {
-    Q_OBJECT // to jest mi potrzebne zeby korzystac z sygnalow i slotow!!!
+    Q_OBJECT 
 public:
     Controller();
     void receiveCmd(int, const QString &cmd);
@@ -18,14 +18,14 @@ public:
     void run();
 
 signals:
-    // te sygnaly przekzuja nowa wartosc do okna
+    
     void tempChanged(double);
     void humidityChanged(double);
     void rainChanged(double);
     void windChanged(double);
     void pressureChanged(double);
 
-    // te mowia ze sensor padl (u nas koniec pliku)
+   
     void tempStateChanged(bool);
     void humidityStateChanged(bool);
     void rainStateChanged(bool);
